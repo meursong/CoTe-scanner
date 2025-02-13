@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "프로그래머스 자동 GitHub 업로드",
+  "version": "1.0",
+  "description": "프로그래머스에서 통과한 코드를 GitHub으로 자동 푸시합니다.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://programmers.co.kr/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://programmers.co.kr/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
