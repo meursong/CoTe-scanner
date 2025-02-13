@@ -1,11 +1,6 @@
-// content.js
-
 function extractCode() {
     const codeBlock = document.querySelector(".ace_content");
-    if (codeBlock) {
-        return codeBlock.innerText;
-    }
-    return null;
+    return codeBlock ? codeBlock.innerText : null;
 }
 
 function detectSuccess() {
@@ -18,6 +13,6 @@ function detectSuccess() {
     }
 }
 
-// 페이지 변화 감지
+// 페이지 변화 감지 (코드 제출 성공 여부 확인)
 const observer = new MutationObserver(detectSuccess);
 observer.observe(document.body, { childList: true, subtree: true });
